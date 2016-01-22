@@ -17,17 +17,23 @@ public void setup()
 public boolean palindrome(String word)
 {
   String miyu = new String();
-
-
-  for (int umi = word.length()-1; umi >= 0; umi--)
+  String kuro = new String();
+  for (int umi = word.length()-1; umi >= 0; umi--) // makes no spaces and special characters
   {
     if (Character.isLetter(word.charAt(umi)))
     {
       miyu += word.charAt(umi);
     }
   }
-
-  if (miyu.equals(word))
+  for (int asuna = 0; asuna < word.length(); asuna++) //makes original word/phrase no spaes and special characters
+  {
+    if (Character.isLetter(word.charAt(asuna)))
+    {
+      kuro += word.charAt(asuna);
+    }
+  }
+  
+  if (miyu.toLowerCase().equals(kuro.toLowerCase())) // checks for palidrome
   {
     return true;
   }
